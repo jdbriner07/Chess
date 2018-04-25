@@ -7,9 +7,13 @@
 //
 
 #include <iostream>
+#include "pieces/pawn.hpp"
+#include "Piece.hpp"
+#include "board.hpp"
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+int main() {
+    Board board;
+    board.print();
+    
     return 0;
 }
