@@ -13,6 +13,8 @@ void Board::move(int startCol, int startRow, int col, int row)
 {
     // check if the pieve at startCol and startRow can be moved to col, row
     // move the piece to the col, row
+    m_board[col][row] = m_board[startRow][startCol];
+    m_board[startRow][startCol] = nullptr;
 }
 
 void Board::print()
