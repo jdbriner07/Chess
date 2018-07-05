@@ -26,11 +26,14 @@ void makeMove(Board &board) {
         }
     } while (!board[col][row]);
     int rowTo;
-    std::cout << "Please enter the row to move your piece to.\n";
-    std::cin >> rowTo;
     int colTo;
-    std::cout << "Please enter the column to move your piece to.\n";
-    std::cin >> colTo;
+    do {
+        std::cout << "Please enter the row to move your piece to.\n";
+        std::cin >> rowTo;
+        std::cout << "Please enter the column to move your piece to.\n";
+        std::cin >> colTo;
+    } while (!((rowTo >= 0 && colTo >= 0) && (rowTo != row || colTo != col)));
+        
     board.move(row, col, rowTo, colTo);
 }
 
