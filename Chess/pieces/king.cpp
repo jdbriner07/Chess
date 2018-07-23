@@ -7,8 +7,12 @@
 //
 
 #include "king.hpp"
+#include <iostream>
 
 bool King::checkMove(int row, int col)
 {
-    return 1;
+    if ( (m_row + 1 >= row && m_row - 1 <= row) && (m_col + 1 >= col && m_col - 1 <= col) ) {
+            return 1;
+    }
+    return 0;
 }

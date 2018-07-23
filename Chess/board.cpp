@@ -9,24 +9,20 @@
 #include <iostream>
 #include "board.hpp"
 
-void Board::move(int startCol, int startRow, int col, int row)
+void Board::move(int startRow, int startCol, int row, int col)
 {
     // check if the pieve at startCol and startRow can be moved to col, row
     // move the piece to the col, row
-    if (row != startRow || col != startCol) {
-        m_board[row][col] = m_board[startRow][startCol];
-        m_board[startRow][startCol] = nullptr;
-    } else {
-        std::cout << "please move your selected piece to a new square\n";
-    }
+    m_board[row][col] = m_board[startRow][startCol];
+    m_board[startRow][startCol] = nullptr;
 }
 
 void Board::print()
 {
     std::cout << "\n" << "________________" << "\n";
-    for (int col = 0; col < 8; ++col)
+    for (int row = 0; row < 8; ++row)
     {
-        for (int row = 0; row < 8; ++row)
+        for (int col = 0; col < 8; ++col)
         {
             std::cout << "|" << (m_board[row][col] ? m_board[row][col]->getPiece() : ' ');
         }

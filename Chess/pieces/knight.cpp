@@ -10,5 +10,7 @@
 
 bool Knight::checkMove(int row, int col)
 {
-    return 1;
+    if ((m_col == col + 2 || m_col == col - 2) && (m_row == row + 1 || m_row == row - 1)) {return 1;};
+    if ((m_col == col + 1 || m_col == col - 1) && (m_row == row + 2 || m_row == row - 2)) {return 1;};
+    return 0;
 }

@@ -10,5 +10,8 @@
 
 bool Rook::checkMove(int row, int col)
 {
-    return 1;
+    if (m_row == row || m_col == col) {
+        return 1;
+    }
+    return 0;
 }

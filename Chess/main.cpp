@@ -19,12 +19,12 @@ void makeMove(Board &board) {
         std::cin >> row;
         std::cout << "Please enter the column of the piece you wish to move.\n";
         std::cin >> col;
-        if (board[col][row]) {
-            std::cout << board[col][row]->getPiece() << "\n";
+        if (board[row][col]) {
+            std::cout << board[row][col]->getPiece() << "\n";
         } else {
             std::cout << "there is not a piece at those coordinates.\n";
         }
-    } while (!board[col][row]);
+    } while (!board[row][col]);
     int rowTo;
     int colTo;
     do {
@@ -32,9 +32,16 @@ void makeMove(Board &board) {
         std::cin >> rowTo;
         std::cout << "Please enter the column to move your piece to.\n";
         std::cin >> colTo;
-    } while (!((rowTo >= 0 && colTo >= 0) && (rowTo != row || colTo != col)));
+    } while (!((rowTo >= 0 && colTo >= 0 && rowTo < 8 && colTo < 8) && (rowTo != row || colTo != col) && board[row][col]->checkMove(rowTo, colTo)));
         
     board.move(row, col, rowTo, colTo);
+}
+
+void playGame(Board &board) {
+    // while the game is ongoing
+        // swap the turn, starting with white
+        // call makeMove for that player
+        // check for checkmate
 }
 
 int main() {

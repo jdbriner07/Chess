@@ -13,6 +13,7 @@
 
 class Piece
 {
+protected:
     int m_col;
     int m_row;
     char m_color;
